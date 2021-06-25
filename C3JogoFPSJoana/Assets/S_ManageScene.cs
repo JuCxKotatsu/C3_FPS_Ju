@@ -20,4 +20,12 @@ public class S_ManageScene : MonoBehaviour
         Application.Quit();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            QuitTheGame();
+        }
+    }
+
 }

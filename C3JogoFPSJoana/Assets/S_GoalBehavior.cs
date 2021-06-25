@@ -6,7 +6,7 @@ public class S_GoalBehavior : MonoBehaviour
 {
     [SerializeField] GameObject sceneManagerObject;
 
-    [SerializeField] GameObject soundManager;
+    //[SerializeField] GameObject soundManager;
 
     S_ManageScene sceneManagerScript;
 
@@ -14,11 +14,17 @@ public class S_GoalBehavior : MonoBehaviour
 
     [SerializeField] AudioSource effectSound;
 
+    [SerializeField] GameObject timeManagerObject;
+
+    S_Timer timerScript;
+
 
 
     private void Start()
     {
         sceneManagerScript = sceneManagerObject.GetComponent<S_ManageScene>();
+
+        timerScript = timeManagerObject.GetComponent<S_Timer>();
      
     }
 
@@ -32,6 +38,10 @@ public class S_GoalBehavior : MonoBehaviour
 
             victoryCanvas.SetActive(true);
             //soundManager.play(effectSound);
+            //effectSound = soundManager.GetComponent<AudioSource>();
+            //effectSound = GetComponent<AudioSource>();
+            effectSound.Play();
+            Destroy(timerScript);
  
         }
     }

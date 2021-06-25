@@ -46,7 +46,7 @@ public class S_PlayerMove : MonoBehaviour
 
 
        
-        Direction = new Vector3((moveHorizontal) * walkSpeed * Time.deltaTime, 0, moveVertical * walkSpeed * Time.deltaTime);
+        Direction = new Vector3((moveHorizontal) * walkSpeed * walkSpeed * Time.deltaTime, 0, moveVertical * walkSpeed * walkSpeed * Time.deltaTime);
         myRigidbody.velocity = (Direction).normalized;
 
         // myTransform.Translate(Direction, Space.Self);
@@ -70,7 +70,7 @@ public class S_PlayerMove : MonoBehaviour
 
         
 
-        if (transform.position.y > 1.5f)
+        if (transform.position.y > 8f)
         {
             //myRigidbody.mass = 5000;
            myRigidbody.AddForce(Vector3.down * fallSpeed * Time.deltaTime);
